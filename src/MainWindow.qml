@@ -66,7 +66,7 @@ ApplicationWindow {
 				}
 
 				onClicked: function() {
-					if (this.currentIndex.row >= 0) {
+					if ((!mainModel.isScanning) && (this.currentIndex.row >= 0)) {
 						// magic numbers are bad practice but I had to use the one here:
 						// a small hack to pass QFileSystemModel::FilePathRole = Qt::UserRole + 1 = 257
 						mainModel.directoryPath = mainModel.fileSystemModel.data(this.currentIndex, 257)
